@@ -1,4 +1,4 @@
-Full build script for OpenCV with/without cuda support on conda environment.
+### Full build script for OpenCV with/without cuda support on conda environment.
 
 Change path in install.sh according to your needs.
 
