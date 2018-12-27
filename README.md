@@ -15,12 +15,23 @@ Change path in install.sh according to your needs.
 
 `chmod +x install.sh`
 
-#### Run script file with path(where downloading of Opencv and other repos will take place) like:
+#### Build opencv by running script file with path(where downloading of Opencv and other repos will take place) like:
 
 `./install.sh /home/ai/Documents/vineet/download/`
 
-#### My environment is:
+#### Find compiled opencv :-
 
+`sudo find / -type f -name "cv2.cpython-35m-x86_64-linux-gnu.so"`
+Note:- use your compiled file name above.
+
+#### Copy complied opencv module into your conda environment python3.5/site-packages
+
+`cp cv2.cpython-35m-x86_64-linux-gnu.so /home/ai/anaconda3/envs/py/lib/python3.5/site-packages/`
+Note:- After going into founded directory run above command. It will move above founded file into your environment python library site-packages.
+  
+#### Environment used for testing above code is:
+
+Opencv:- 4.0.1
 Ubuntu 16.04,
 Nvidia driver- 384.130,
 GPU: GTX 1070,
