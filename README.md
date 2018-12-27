@@ -19,7 +19,7 @@ Change path in install.sh according to your needs.
 
 `./install.sh /home/ai/Documents/vineet/download/`
 
-### My enviorment is:
+### My environment is:
 
 Ubuntu 16.04,
 Nvidia driver- 384.130,
