@@ -213,17 +213,13 @@ cmake \
 -DWITH_CUBLAS=ON                                                                            \
 -DCUDA_TOOLKIT_ROOT_DIR=/home/ai/Documents/vineet/cuda/                                     \
 -DBUILD_OPENCV_JAVA=OFF                                                                     \
--DWITH_TBB=ON                                                                               \
--DWITH_V4L=ON                                                                               \
--DWITH_QT=ON                                                                                \
--DWITH_OPENGL=ON                                                                            \
--DBUILD_LIBPROTOBUF_FROM_SOURCES=ON                                                         \
+-DBUILD_LIBPROTOBUF_FROM_SOURCES=ON                                                        \
 .. || fail
 
 # Making
 msg "Building OpenCV."
 make -j $(($(nproc)+1)) || fail
-make -j $(($(nproc)+1)) test || fail
+# make -j $(($(nproc)+1)) test || fail
 
 # msg "Installing OpenCV"
 # sudo make -j $(($(nproc)+1)) install || fail
