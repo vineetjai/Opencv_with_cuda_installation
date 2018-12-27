@@ -192,6 +192,11 @@ cd $DOWNLOAD_PATH
 sudo rm -rf opencv/build || fail
 mcd opencv/build || fail
 
+
+# Uninstalling and installing below package to remove any error in build
+sudo apt-get autoremove libtiff5-dev
+sudo apt-get install libtiff5-dev
+
 # Configuring make
 msg "Configuring OpenCV Make"
 
@@ -208,6 +213,11 @@ cmake \
 -DWITH_CUBLAS=ON                                                                            \
 -DCUDA_TOOLKIT_ROOT_DIR=/home/ai/Documents/vineet/cuda/                                     \
 -DBUILD_OPENCV_JAVA=OFF                                                                     \
+-DWITH_TBB=ON                                                                               \
+-DWITH_V4L=ON                                                                               \
+-DWITH_QT=ON                                                                                \
+-DWITH_OPENGL=ON                                                                            \
+-DBUILD_LIBPROTOBUF_FROM_SOURCES=ON                                                         \
 .. || fail
 
 # Making
@@ -215,10 +225,10 @@ msg "Building OpenCV."
 make -j $(($(nproc)+1)) || fail
 make -j $(($(nproc)+1)) test || fail
 
-msg "Installing OpenCV"
-sudo make -j $(($(nproc)+1)) install || fail
-sudo ldconfig || fail
+# msg "Installing OpenCV"
+# sudo make -j $(($(nproc)+1)) install || fail
+# sudo ldconfig || fail
 
 # Finished
-msg "Installation finished for OpenCV"
+# msg "Installation finished for OpenCV"
 msg "Copy your opencv compiled file into dist-packages of environment"

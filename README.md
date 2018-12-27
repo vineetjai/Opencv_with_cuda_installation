@@ -21,7 +21,7 @@ Change path in install.sh according to your needs.
 
 ### My enviorment is:
 
-Ubuntu 16.04
-Nvidia driver- 384.130
-GPU: GTX 1070
+Ubuntu 16.04,
+Nvidia driver- 384.130,
+GPU: GTX 1070,
 Cuda9 with cudnn support
